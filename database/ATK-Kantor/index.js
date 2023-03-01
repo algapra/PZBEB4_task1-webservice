@@ -14,9 +14,8 @@ function writeData(data) {
 
 function create(bodyData) {
   let data = getDataFromDatabase();
-  const id = data.id
-  data[id] = bodyData
-  writeData(bodyData);
+  data.push(bodyData);
+  writeData(data);
   return bodyData;
 }
 
@@ -31,16 +30,9 @@ function getOne(atk_id) {
 }
 
 function update(bodyData, atk_id) {
-  let data = getOne(atk_id); 
-  let allData = fetch();
-  data = { ...data, ...bodyData };
-  console.log(data);
-  const index = allData.findIndex((d) => d.id == atk_id);
-  if (!index || !data) {
-    throw Error('data Alat tulis tidak ditemukan')
-  }
-  allData[index] = data;
-  writeData(allData);
+  let data = getOne(atk_id);
+  data = bodyData ;
+  writeData(data);
   return data;
 }
 

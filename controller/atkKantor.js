@@ -12,8 +12,8 @@ function fetch(req, res) {
 }
 
 function get(req, res) {
-  const atkKantor = req.params.id;
-  const selectATK = dbATK.getOne(atkKantor);
+  const idATK = req.params.id;
+  const selectATK = dbATK.getOne(idATK);
   let data = {},
     responseStatus = 200;
   if (selectATK) {
@@ -26,15 +26,15 @@ function get(req, res) {
 }
 
 function update(req, res) {
-  const atkKantor = req.params.id;
+  const idATK = req.params.id;
   const body = req.body;
-  const result = dbATK.update(body, atkKantor);
+  const result = dbATK.update(body, idATK);
   res.send(result);
 }
 
 function destroy(req, res) {
-  const atkKantor = req.params.id;
-  dbATK.destroy(atkKantor);
+  const idATK = req.params.id;
+  dbATK.destroy(idATK);
   res.sendStatus(204);
 }
 
