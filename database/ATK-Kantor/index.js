@@ -29,16 +29,17 @@ function getOne(atk_id) {
   return data.find((d) => d.id == atk_id);
 }
 
-function update(bodyData, atk_id) {
-  let data = getOne(atk_id);
-  data = bodyData ;
+function update(bodyData, atk_id, namaATK) {
+  let data = fetch();
+  const cariData = data.filter((d) => d.id === atk_id && d.nama === namaATK);
+  data[cariData] = bodyData
   writeData(data);
   return data;
 }
 
-function destroy(atk_id) {
+function destroy(atk_id, namaATK) {
   let data = fetch();
-  data = data.filter((d) => d.id != atk_id);
+  data = data.filter((d) => d.id !== atk_id || d.nama !== namaATK);
   writeData(data);
 }
 

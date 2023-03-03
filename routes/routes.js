@@ -8,8 +8,8 @@ const jadwalPiketCtrl = require('../controller/jadwalPiket');
 router.post('/atkKantor', atkKantorCtrl.create);
 router.get('/atkKantor', atkKantorCtrl.fetch);
 router.get('/atkKantor/:id', atkKantorCtrl.get);
-router.put('/atkKantor/:id', atkKantorCtrl.update);
-router.delete('/atkKantor/:id', atkKantorCtrl.destroy);
+router.put('/atkKantor/:id/:namaATK', atkKantorCtrl.update);
+router.delete('/atkKantor/:id/:namaATK', atkKantorCtrl.destroy);
 
 // router untuk Jadwal Piket
 router.post('/jadwalPiket', jadwalPiketCtrl.create);

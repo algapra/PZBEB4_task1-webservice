@@ -28,14 +28,16 @@ function get(req, res) {
 
 function update(req, res) {
   const idATK = req.params.id;
+  const namaATK = req.params.nama;
   const body = req.body;
-  const result = dbATK.update(body, idATK);
+  const result = dbATK.update(body, idATK, namaATK);
   res.send(result);
 }
 
 function destroy(req, res) {
   const idATK = req.params.id;
-  dbATK.destroy(idATK);
+  const namaATK = req.params.nama;
+  dbATK.destroy(idATK, namaATK);
   res.sendStatus(204);
 }
 
