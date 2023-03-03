@@ -29,22 +29,17 @@ function getOne(idPegawai) {
   return data.filter((d) => d.id == idPegawai);
 }
 
-function update(bodyData, idPegawai) {
-  let data = getOne(idPegawai);
-  let allData = fetch();
-  data = { ...data, ...bodyData }; 
-  const id = allData.find((d) => d.id == idPegawai);
-  if (!id || !data) {
-    throw Error('Data pegawai tidak ditemukan')
-  }
-  allData[id] = data;
+function update(bodyData, idPegawai, hariPegawai) {
+  let data = fetch();
+  const cariData = data.filter((d) => d.id === idPegawai && d.hari === hariPegawai);
+  data = bodyData
   writeData(data);
   return data;
 }
 
-function destroy(idPegawai) {
+function destroy(idPegawai, hariPegawai) {
   let data = fetch();
-  data = data.filter((d) => d.id != idPegawai);
+  data = data.filter((d) => d.id !== idPegawai || d.hari !== hariPegawai);
   writeData(data);
 }
 

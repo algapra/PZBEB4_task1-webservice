@@ -15,7 +15,7 @@ router.delete('/atkKantor/:id', atkKantorCtrl.destroy);
 router.post('/jadwalPiket', jadwalPiketCtrl.create);
 router.get('/jadwalPiket', jadwalPiketCtrl.fetch);
 router.get('/jadwalPiket/:id', jadwalPiketCtrl.get);
-router.put('/jadwalPiket/:id', jadwalPiketCtrl.update);
-router.delete('/jadwalPiket/:id', jadwalPiketCtrl.destroy);
+router.put('/jadwalPiket/:id/:hari', jadwalPiketCtrl.update);
+router.delete('/jadwalPiket/:id/:hari', jadwalPiketCtrl.destroy);
 
 module.exports = router

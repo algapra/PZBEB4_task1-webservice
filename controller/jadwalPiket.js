@@ -50,14 +50,16 @@ function get(req, res) {
 
 function update(req, res) {
   const idPegawai = req.params.id;
+  const hariPegawai = req.params.hari;
   const body = req.body;
-  const result = dbPegawai.update(body, idPegawai);
+  const result = dbPegawai.update(body, idPegawai, hariPegawai);
   res.send(result);
 }
 
 function destroy(req, res) {
   const idPegawai = req.params.id;
-  dbPegawai.destroy(idPegawai);
+  const hariPegawai = req.params.hari;
+  dbPegawai.destroy(idPegawai, hariPegawai);
   res.sendStatus(204);
 }
 
