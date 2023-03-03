@@ -1,0 +1,14 @@
+// untuk property atkKantor
+{
+    "id": "01",
+    "nama": "sapu",
+    "warna": "asdasdasda",
+    "jumlah": "10"
+}
+
+// untuk Jadwal Piket
+{
+    "id": "01",
+    "namaPegawai": "aldi",
+    "hari": "senin"
+}

@@ -8,6 +8,7 @@ function create(req, res) {
 
 function fetch(req, res) {
   const data = dbATK.fetch();
+  res.set('Cache-Control', `max-age=${60 * 2}`);
   res.send(data);
 }
 
