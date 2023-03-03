@@ -32,7 +32,7 @@ function getOne(idPegawai) {
 function update(bodyData, idPegawai, hariPegawai) {
   let data = fetch();
   const cariData = data.filter((d) => d.id === idPegawai && d.hari === hariPegawai);
-  data = bodyData
+  data[cariData] = bodyData
   writeData(data);
   return data;
 }
